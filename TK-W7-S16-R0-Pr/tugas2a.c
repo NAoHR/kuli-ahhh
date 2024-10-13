@@ -2,19 +2,6 @@
 #define DISCOUNT_PERCENTAGE 5
 #define PRICE_MULTIPLE 100000
 
-/*
- * Pada sebuah supermarket membuat program hadiah dengan memberikan 
- * kupon undian kepada pembeli. Kupon undian akan diberikan jika total 
- * pembelian minimal Rp. 100.000,00 dan dan akan dihitung kelipatannya.
- * Diskon 5% jika tota pembelian minimal Rp. 100.000,00.
- * 
- * Misal: seorang pembeli dengan total pembelian 
- * Rp. 250.000,00 maka dapat kupon undian sebanyak 2 
- * lembar. Dan dapat diskon sebesar Rp. 25.000,00, 
- * maka yang dibayar sebesar Rp. 225.000,00. 
-*/
-
-
 struct Order {
     char nama_barang[255];
     float harga;
@@ -38,6 +25,7 @@ void input_items_and_price(struct Order *order_ptr) {
 
 
 struct Result calculate_final_discount(struct Order *order_ptr, int *counter_ptr) {
+    // proses kalkulasi perhitungan tiket diskon, nominal diskon, dan hasil akhir
     struct Result result;
     int total_ticket;
     float discount_total;
@@ -51,11 +39,11 @@ struct Result calculate_final_discount(struct Order *order_ptr, int *counter_ptr
     }
 
     total_ticket = total / PRICE_MULTIPLE;
-    discount_total = (float) total_ticket * (float) DISCOUNT_PERCENTAGE / (float) 100;
+    discount_total = total_ticket * DISCOUNT_PERCENTAGE;
     
     result.discount = discount_total;
     result.total_price = total;
-    result.discount_price = total * discount_total;
+    result.discount_price = total * discount_total / 100;
 
     return result;
     
@@ -64,7 +52,7 @@ struct Result calculate_final_discount(struct Order *order_ptr, int *counter_ptr
 void display_result(struct Result result){
     printf("==== TOTAL ====\n");
     printf("total: %2.f\n", result.total_price);
-    printf("discount percentage: %d\n", result.discount);
+    printf("discount percentage: %d%%\n", result.discount);
     printf("discount price: %.2f\n", result.discount_price);
     printf("after discount: %.2f\n", result.total_price - result.discount_price);
 }
