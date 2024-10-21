@@ -1,0 +1,14 @@
+Selamat Sore Pak, Kami Izin untuk mengumpulkan tugas terkait pemrogramana Kelompok atas nama:
+- Golden Town (2802512650) 
+- Lani Sri Agustin (2802563922) 
+- Najmi (2802513035) 
+- Sarah Tsabitah (2802513016) 
+- Satria Sangga Amertha (2802512631) 
+
+Berikut merupakan penjelasan terkait file
+
+tugas2a.c
+- berisi tentang perhitungan order yang nantinya akan dikalkulasi untuk mendapatkan diskon atau tidak
+
+tugas2b.c
+- berisi tentang sistem manajemen untuk memasukkan data pegawai beserta golongannya, disini juga ada perhitungan terkait gaji bulanan hasil kalkulasi gaji ditambah dengan total lembur. Terimakasih
